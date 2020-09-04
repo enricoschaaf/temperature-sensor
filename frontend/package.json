@@ -1,0 +1,65 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "prettier": {
+    "semi": false,
+    "trailingComma": "all"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && pretty-quick --staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@tailwindui/react": "^0.1.1",
+    "heroicons": "^0.4.2",
+    "next": "^9.5.3",
+    "preact": "^10.4.8",
+    "preact-render-to-string": "^5.1.10",
+    "react": "github:preact-compat/react#1.0.0",
+    "react-dom": "github:preact-compat/react-dom#1.0.0",
+    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.1"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^9.5.3",
+    "@prefresh/next": "^1.1.0",
+    "@tailwindcss/ui": "^0.5.0",
+    "@types/node": "^14.6.3",
+    "@types/react": "^16.9.49",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.13",
+    "postcss-easing-gradients": "^3.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.1.1",
+    "pretty-quick": "^3.0.0",
+    "react-refresh": "^0.8.3",
+    "tailwindcss": "^1.7.6",
+    "typescript": "^4.0.2"
+  },
+  "resolutions": {
+    "webpack": "^5.0.0-beta.28"
+  }
+}
