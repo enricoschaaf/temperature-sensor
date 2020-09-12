@@ -1,0 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["transactionApi"]
+}
+
+model Reading {
+  clientId String
+  humidity Float
+  temperature Float
+  timestamp DateTime
+  @@id([clientId, timestamp])
+  @@index([clientId, humidity, temperature, timestamp])
+  @@map(name: "Readings")
+}
