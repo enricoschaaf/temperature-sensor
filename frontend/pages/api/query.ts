@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next"
 const prisma = new PrismaClient()
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  console.time()
+  console.time("Query took:")
   const [{ avg, max, min }, current] = await prisma.$transaction([
     prisma.reading.aggregate({
       avg: { humidity: true, temperature: true },
@@ -21,7 +21,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       where: { clientId: "WzqhY_xFZTzwaWK_kyBxu" },
     }),
   ])
-  console.timeEnd()
+  console.timeEnd("Query took:")
   return res.json({
     avg: {
       humidity: Math.round((avg.humidity + Number.EPSILON) * 10) / 10,
